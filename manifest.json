@@ -1,0 +1,38 @@
+{
+  "name": "Pehawe Official",
+  "short_name": "Pehawe",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#2E6060",
+  "description": "Pehawe Official Blog Tempat Berbagi Tutorial Dan Trik Blogger, Gretonger, Inject All Operator, Polosan, Config Http Injector, Kpntunnel Dan Open Vpn",
+  "icons": [{
+    "src": "https://4.bp.blogspot.com/-csECPmmhW2Q/WmLF_r26MpI/AAAAAAAAC4w/ps1xaeEIgvwEEo7zhCn1tA-CNtpghhNbgCLcBGAs/s1600/android-icon-192x192.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "https://4.bp.blogspot.com/-csECPmmhW2Q/WmLF_r26MpI/AAAAAAAAC4w/ps1xaeEIgvwEEo7zhCn1tA-CNtpghhNbgCLcBGAs/s1600/android-icon-192x192.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }, {
+    "src": "https://4.bp.blogspot.com/-csECPmmhW2Q/WmLF_r26MpI/AAAAAAAAC4w/ps1xaeEIgvwEEo7zhCn1tA-CNtpghhNbgCLcBGAs/s1600/android-icon-192x192.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }, {
+    "src": "https://4.bp.blogspot.com/-csECPmmhW2Q/WmLF_r26MpI/AAAAAAAAC4w/ps1xaeEIgvwEEo7zhCn1tA-CNtpghhNbgCLcBGAs/s1600/android-icon-192x192.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "https://4.bp.blogspot.com/-csECPmmhW2Q/WmLF_r26MpI/AAAAAAAAC4w/ps1xaeEIgvwEEo7zhCn1tA-CNtpghhNbgCLcBGAs/s1600/android-icon-192x192.png",
+    "sizes": "168x168",
+    "type": "image/png"
+  }, {
+    "src": "https://4.bp.blogspot.com/-csECPmmhW2Q/WmLF_r26MpI/AAAAAAAAC4w/ps1xaeEIgvwEEo7zhCn1tA-CNtpghhNbgCLcBGAs/s1600/android-icon-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "https://1.bp.blogspot.com/--kaDF9_R-RY/Wpk8DjA81EI/AAAAAAAADMM/xXo9s5OOFjsjZ8bWkg8jYKsDphGjs1qoACLcBGAs/s1600/logo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}
