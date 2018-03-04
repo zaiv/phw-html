@@ -3,7 +3,7 @@
   "short_name": "Pehawe",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fff",
+  "background_color": "#e5e3e3",
   "theme_color": "#2E6060",
   "description": "Pehawe Official Blog Tempat Berbagi Tutorial Dan Trik Blogger, Gretonger, Inject All Operator, Polosan, Config Http Injector, Kpntunnel Dan Open Vpn",
   "icons": [{
