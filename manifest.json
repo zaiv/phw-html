@@ -1,7 +1,7 @@
 {
   "name": "Pehawe Official",
   "short_name": "Pehawe",
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#e5e3e3",
   "theme_color": "#2E6060",
