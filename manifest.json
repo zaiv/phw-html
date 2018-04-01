@@ -1,9 +1,9 @@
 {
-  "name": "Pehawe Official",
+  "name": "Pehawe.info",
   "short_name": "Pehawe",
   "start_url": "https://www.pehawe.info/",
   "display": "standalone",
-  "background_color": "#e5e3e3",
+  "background_color": "#fff",
   "theme_color": "#2E6060",
   "description": "Pehawe Official Blog Tempat Berbagi Tutorial Dan Trik Blogger, Gretonger, Inject All Operator, Polosan, Config Http Injector, Kpntunnel Dan Open Vpn",
   "icons": [{
