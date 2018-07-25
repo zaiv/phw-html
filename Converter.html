@@ -12,6 +12,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
 </head>
 <style>
+  #arlina{position:relative;padding:0;margin:5% auto;width:100%;overflow:hidden;vertical-align:top}
   code{font-family:Consolas,Monaco,'Andale Mono','Courier New',Courier,Monospace;color:#2a5ead;font-size:13px;padding:2px 4px;color:#d14;}
 #codes{border:1px solid #ccc;width:68%;height:250px;margin:0 auto;display:block;background-color:#fafafa;color:#333;padding:15px;font:400 14px 'Courier New',Monospace;border-radius:4px}
 .button-group{margin:0 auto 0;text-align:center}
@@ -30,6 +31,7 @@ button[disabled],button[disabled]:active{background:#0095c6;}
 .post-body ul#wrapin br {display:none;}
   </style>
 <body>
+  <div id="arlina">
  <textarea id="codes" placeholder="Tulis/paste kode di sini lalu klik 'Konversi'" spellcheck="false"></textarea>
 
 <div class="button-group">
@@ -51,6 +53,7 @@ button[disabled],button[disabled]:active{background:#0095c6;}
 <input checked="true" id="opt5" type="checkbox" />Konversi <code>&gt;</code> menjadi <code>&amp;gt;</code>
 </li>
 </ul>
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script type="text/javascript">
   function cdClear() {
