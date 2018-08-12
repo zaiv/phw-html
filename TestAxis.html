@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AXISnet v1.0</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="https://my.axisnet.id//assets/css/circle.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--  stylesheet  -->
+    <link rel="stylesheet" type="text/css" href="https://my.axisnet.id/assets/css/axisnet.css"/>
+	
+    <link href="https://my.axisnet.id/assets/js/plugins/jquery.growl/css/jquery.growl.css" rel="stylesheet">
+    <link href="https://my.axisnet.id/assets/js/plugins/jquery.loading/jquery.loading.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://gretonger.mobi/dist/css/bootstrap-slider.min.css">
+
+    <script src="https://my.axisnet.id/assets/js/libs/modernizr-2.8.3.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://my.axisnet.id/assets/js/libs/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://my.axisnet.id/assets/js/plugins/formedit.js"></script>
+    <script src="https://my.axisnet.id/assets/js/plugins/datepicker.js"></script> 
+    <script src="https://my.axisnet.id/assets/js/plugins/jquery.growl/js/jquery.growl.js"></script> 
+    <script src="https://my.axisnet.id/assets/js/plugins/jquery.loading/jquery.loading.js"></script> 
+    <script src="https://my.axisnet.id/assets/js/plugins/jquery.validate/dist/jquery.validate.js"></script> 
+    <script src="https://my.axisnet.id/assets/js/plugins/jquery.validate/dist/additional-methods.js"></script>
+    <script src="https://gretonger.mobi/axis/dist/bootstrap-slider.min.js"></script>
+    <script type="text/javascript">
+        notice_msg=function(msg){
+            $.growl.notice({message:msg});
+        }
+        error_msg=function(msg){
+            $.growl.error({message:msg});
+        }
+
+	 function get_data_form(obj){
+   		var params = {};
+
+		obj.forEach(function(v,i){
+	        params[v.name] = v.value;
+		});
+
+	  	return params;
+	}
+    </script>
+    <style>
+		#ex1Slider .slider-selection {background:#c80087;}
+    </style>
+  </head>
+  <body><div style="display:none"><script type="text/javascript">
+var _qevents = _qevents || [];
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+_qevents.push({
+qacct:"p-0cfM8Oh7M9bVQ"
+});
+</script>
+	  
+	<div class="bg-overlay-menu hide smooth"></div>
+	 <div class="container" style="padding: 50px 50px;">
+		 
+		 <div class="panel panel-default login-form centered">
+            <h4 class="login-title text-center up-case">Axisnet v1.0</h4>
+            <div class="panel-body">
+              <form class="login-formcontent" id="form_login" action="" novalidate="novalidate">
+                <div class="input-group login-userinput">
+                  <span class="input-group-addon no-bdr no-outline no-bg"><span class="glyphicon glyphicon-phone"></span></span>
+                  <input class="form-control no-bdr no-outline" name="msisdn" placeholder="Masukkan Msisdn/Telp" type="text">
+                </div>
+                <div class="input-group login-userinput">
+                  <span class="input-group-addon no-bdr no-outline no-bg"><span class="glyphicon glyphicon-lock"></span></span>
+                  <input class="form-control no-bdr no-outline" name="otp" placeholder="Masukkan Otp" type="text">
+                    
+                </div>
+                <div class="input-group login-userinput">
+                  <span class="input-group-addon no-bdr no-outline no-bg"><span class="glyphicon glyphicon-pencil"></span></span>
+                  <input class="form-control no-bdr no-outline" name="pkgid" placeholder="Masukkan pkgid pisah dg koma" type="text">
+                    
+                </div>
+                <div class="input-group">
+					<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="1"/>
+                </div>
+                
+                <button class="btn btn-primary btn-block login-button btn-purple no-bdr up-case" type="submit">TEMBAK</button>
+                <div class="login-options text-center">
+                  <p>
+                    <span></span><br>
+                    <a href="#" id="register">Request OTP CODE</a>
+                  </p>
+                </div>  
+              </form> 
+   
+            </div>
+          </div>
+      
+	 </div>
+	 
+	  <div class="modal fade" id="modalregister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content panel panel-default login-form centered">
+            <h4 class="login-title text-center">Axisnet v1.0 request OTP</h4>
+            <div class="panel-body">
+              <form class="login-formcontent" action="" id="formRegister" novalidate="novalidate">
+                <div class="input-group login-userinput">
+                  <span class="input-group-addon no-bdr no-outline no-bg"><span class="glyphicon glyphicon-phone"></span></span>
+                  <input class="form-control no-bdr no-outline" name="rmsisdn" autocomplete="off" placeholder="Masukkan MSISDN" required="" type="text">
+                </div>
+
+                <div class="input-group login-userinput">
+                  <div class="col-md-6">
+		
+					  
+						<img src="https://api.axisnet.id/newaxisnet/sso/captcha/?cid=" id="captcha-login">
+					   
+                  </div>
+                  <div class="col-md-6">
+                    <input id="captcha" class="form-control no-bdr no-outline" name="captcha" autocomplete="off" placeholder="Captcha" required="" type="text">
+                  </div>
+                </div>
+
+                <span style="font-size: 10px;">
+                  Klik pada gambar untuk merefresh
+                </span>
+
+
+                <button class="btn btn-primary btn-block btn-purple no-bdr up-case" id="btn-register"><i class="fa fa-sign-in"></i> Kirim</button>
+                <div class="login-options text-center">
+                  <p>
+                    <a href="#" id="backToLogin">Kembali</a>
+                  </p>
+                </div>  
+              </form> 
+   
+            </div>
+          </div>
+      </div>
+    </div>
+	  
+	  <style type="text/css">
+      .error{
+        color: red;
+      }
+    </style>
+    <script type="text/javascript">
+		
+		var delay;
+		var cid = Math.floor(Date.now() / 1000);
+		
+		
+		
+		
+        form = $('.login-formcontent');
+        form.validate({
+          rules: {
+            msisdn : {
+              required : false
+            },
+            otp : {
+              required : false
+            },
+            pkgid : {
+              required : false
+            }
+          },
+          errorPlacement: function (error, element) {
+            console.log(element, 'ELEMENT');
+            error.insertAfter($(element).parent());
+          }          
+        });
+        
+		$('#ex1').slider({formatter: function(value) {
+			delay = value;
+			
+			return 'DELAY: ' + value;
+		}});
+		$("#image-captcha, #captcha-login").click(function(e){
+			
+			cid = Math.floor(Date.now() / 1000);
+			$(this).attr("src", "https://api.axisnet.id/newaxisnet/sso/captcha/?cid=" + cid);
+        });
+        $('#captcha-login').trigger('click');
+        
+        $("#register").click(function(){
+          document.getElementById("formRegister").reset();
+
+          $('#modallogin').modal('hide');
+          $('#modalregister').modal('show');
+        });
+
+        $("#backToLogin").click(function(){
+          $('#modallogin').modal('show');
+          $('#modalregister').modal('hide');
+        });
+
+        $("#btn-register").click(function(e){
+			
+          e.preventDefault();
+          var rmsisdn=jQuery('input[name="rmsisdn"]').val();
+          var rcaptcha=jQuery('input[name="captcha"]').val();
+          
+          //var cid = Math.floor(Date.now() / 1000);
+          
+          
+          var form = document.getElementById("formRegister"),
+            formValid = form.checkValidity(),
+            formData = new FormData(form);
+
+          if(formValid){
+            $("#btn-register").prop('disabled', true);
+            $.ajax({
+                  url: 'http://gretonger.mobi:9192',
+                  type: 'POST',
+                  dataType: 'JSON',
+                  data:{method:'otp',msisdn:rmsisdn,captcha:rcaptcha,cid:cid},
+		  cache : false,
+                  success:function(data){
+					
+                    $("#btn-register").prop('disabled', false);
+                    $("#image-captcha").attr("src", "https://api.axisnet.id/newaxisnet/sso/captcha/?cid=" + cid );
+                    $("#captcha").val('');
+
+                    if(data.code == '1'){
+                      $("#backToLogin").click();
+                      notice_msg(data.message);
+                    } else {
+                      error_msg(data.message);
+                      //location.reload();
+                    }
+                  },
+                  error:function(e){
+					  
+                    //$("#btn-register").prop('disabled', false);
+                    $("#image-captcha").attr("src", "https://api.axisnet.id/newaxisnet/sso/captcha/?cid=" + cid);
+                    $("#captcha").val('');
+                   error_msg('Maaf ada kesalahan ! pastikan internet anda terkoneksi, silahkan ulangi beberapa saat lagi');
+                  }
+              });
+          } else {
+			  console.log("form err");
+            error_msg('Isi semua isian dengan benar!');
+          }
+
+        });
+        //$('.login-button').removeAttr('disabled');
+        $('.login-button').html('TEMBAK');                      
+
+        $('.login-button').click(function(e){
+              e.preventDefault();
+              
+              var msisdn=jQuery('input[name="msisdn"]').val();
+              var otp=jQuery('input[name="otp"]').val();
+              var pkgid=jQuery('input[name="pkgid"]').val();
+              
+              if(!form.valid()) return false;
+              // $('.login-formcontent').loading();
+              dataform=new FormData($('.login-formcontent')[0]);
+              $('.login-button').html('Processing...');
+              $('.login-button').attr('disabled', 'disabled');
+              $.ajax({
+                  url: 'http://gretonger.mobi:9192',
+                  type:'POST',
+                  dataType: 'JSON',
+                  data:{method:'login',msisdn:msisdn,otp:otp,pkgid:pkgid,delay:delay},
+		  cache:false,
+                  success:function(data){
+                    // $('.login-formcontent').loading('stop');
+                    // $('.login-button').attr('disabled', 'disabled');
+                    if(data.code=='1'){
+						notice_msg(data.message);
+						$('.login-button').html('SUCCESS');
+						
+                      // $('.login-formcontent')[0].reset();
+                      // $.growl.error({message:data.msg});
+                      //alert("success");
+                    }else
+		     if(data.code=='-1'){
+				 error_msg(data.message);
+				 $('.login-button').removeAttr('disabled');  
+	                $('.login-button').html('TEMBAK');
+		    }
+		    else{
+                      error_msg(data.message);
+                      $('.login-button').removeAttr('disabled');
+                      $('.login-button').html('TEMBAK');                                                                
+                    }
+                  },
+                  error:function(e){
+                    $('.login-button').removeAttr('disabled');  
+                    $('.login-button').html('TEMBAK');                  
+                   error_msg('Error connecting');
+                  }
+              });
+        })
+    </script> 
+
+	  <footer class="foot-axis">
+        <nav>
+          <div class="container">
+               <div class="col-xs-12"> 
+                <span class="copy">Copyright ©2018 Adipati Arya </span>
+                |
+                <a href="#">Disclaimer</a>
+                |
+                <a href="#">Syarat &amp; Ketentuan </a>
+              </div>
+          </div>
+        </nav>
+        <img class="ft-img" src="https://my.axisnet.id/assets/img/bg-footer-small.png" />
+    </footer>
+	<script type="text/javascript">
+      window.onload = function(){$("#showPassword").hide();}
+      $("#txtPassword").on('change',function() {  
+          if($("#txtPassword").val())
+          {
+            $("#showPassword").show();
+          }
+          else
+          {
+            $("#showPassword").hide();
+          }
+      });
+      $(".reveal").on('click',function() {
+          var $pwd = $("#txtPassword");
+          if ($pwd.attr('type') === 'password') 
+          {
+              $pwd.attr('type', 'text');
+          } 
+          else 
+          {
+              $pwd.attr('type', 'password');
+          }
+      });
+      $(".menu-trigger , .bg-overlay-menu").click(function(){
+          $(".menu-trigger i, .bg-overlay-menu, .menu-container ").toggleClass("hide");
+      });
+      function toggle(source) {
+        checkboxes = document.getElementsByName('foo');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+          checkboxes[i].checked = source.checked;
+        }
+      }
+      $(document).ready(function () {
+          $(".btn-select").each(function (e) {
+              var value = $(this).find("ul li.selected").html();
+              if (value != undefined) {
+                  $(this).find(".btn-select-input").val(value);
+                  $(this).find(".btn-select-value").html(value);
+              }
+          });
+      });
+
+      $(document).on('click', '.btn-select', function (e) {
+          e.preventDefault();
+          var ul = $(this).find("ul");
+          if ($(this).hasClass("active")) {
+              if (ul.find("li").is(e.target)) {
+                  var target = $(e.target);
+                  target.addClass("selected").siblings().removeClass("selected");
+                  var value = target.html();
+                  $(this).find(".btn-select-input").val(value);
+                  $(this).find(".btn-select-value").html(value);
+              }
+              ul.hide();
+              $(this).removeClass("active");
+          }
+          else {
+              $('.btn-select').not(this).each(function () {
+                  $(this).removeClass("active").find("ul").hide();
+              });
+              ul.slideDown(300);
+              $(this).addClass("active");
+          }
+      });
+
+      $(document).on('click', function (e) {
+          var target = $(e.target).closest(".btn-select");
+          if (!target.length) {
+              $(".btn-select").removeClass("active").find("ul").hide();
+          }
+      });
+      var $formedit = $('.formedit');
+      $formedit.formedit();
+
+      $('#formedit-enable').on('click', function() {
+          $formedit.formedit('enable');
+          $(this).blur().addClass('disabled');
+          $('.formedit-btn-container button').removeClass('hide');
+      })
+      $('#formedit-reset').on('click', function() {
+          $formedit.formedit('reset');
+          $('.formedit-btn-container button').blur().addClass('hide');
+          $('#formedit-enable').removeClass('disabled');
+      });
+      $(function () {
+        $("#datepicker").datepicker({ 
+              autoclose: true, 
+              todayHighlight: true
+        }).datepicker('update', new Date());;
+      });      
+    </script>
+	
+  <style type="text/css">html { padding-top: 26px; } #xt_auth_iframe { position: fixed; top: 0; left: 0; background: transparent; }</style><iframe id="xt_auth_iframe" allowTransparency="true" scrolling="no" frameBorder="0" style="width: 100%; border: 0; height: 26px;" src="http://xtgem.com/__xt_authbar?data=eyJ1cmwiOiJodHRwOlwvXC90ZXN0YW51Lnh0Z2VtLmNvbVwvaW5kZXgiLCJsb2dnZWRfaW4iOmZhbHNlLCJkb21haW4iOiJ0ZXN0YW51Lnh0Z2VtLmNvbSIsInBvc2l0aW9uIjp7ImFic29sdXRlIjoiZml4ZWQifX0="></iframe><br /><!----><noscript></noscript><script type="text/javascript"></script><textarea style="display:none;"></textarea><style></style><iframe style="display:none;width:0px;height:0px;border:0"></iframe><noframes></noframes><div id="st1534088463" style="z-index:999999;z-index:999999999;"><span id="a1534088463"><a href="http://xtgem.com/click?p=forums_catalog_web&amp;u=__urlaHR0cDovL3h0Z2VtLmNvbS9mb3J1bXM/YWQ9MQ==&amp;s=testanu.xtgem.com&amp;t=KhseHxkeFwgFBAAZBwIFDg4CDw0NBwhwc3U=&amp;_is_adult=No&amp;_ad_pos=Bottom&amp;_ad_format=Plain&amp;_ad_url=dGVzdGFudS54dGdlbS5jb20=&amp;_ad_networks=&amp;_ad_type=Banner" target="_blank"><img src="http://xtgem.com/images/forum/xtgem-forums.jpg" alt="XtGem Forum catalog"></a></span>        <style type="text/css">
+            #st1534088463 *
+            {
+                box-sizing:content-box !important;
+            }
+
+            #st1534088463 a
+            {
+                display: inline-block !important;
+                vertical-align: top;
+                padding: 0; margin: 0;
+            }
+
+            #st1534088463 a img
+            {
+                display: inline-block !important;
+            }
+
+            #st1534088463 ._xt_ad_close, #st1534088463 ._xt_ad_close_internal
+            {
+                display: inline-block !important;
+                position: absolute !important;
+                right: 6px !important;
+                width: 20px !important;
+                height: 20px !important;
+                cursor: pointer;
+            }
+
+            #st1534088463 ._xt_ad_close
+            {
+                top: -10px !important;
+            }
+
+            #st1534088463 ._xt_ad_close_internal
+            {
+                border: 6px solid transparent;
+                top: -12px !important;
+                right: 3px !important;
+            }
+
+            #a1534088463
+            {
+                display: inline-block !important;
+                position: relative !important;
+                text-align: left !important;
+                visibility: visible !important;
+                max-width: 100% !important;
+                max-height: none !important;
+                z-index:999999 !important;
+                z-index:999999999 !important;
+            }
+
+            #a1534088463 img
+            {
+                max-width: none !important;
+                max-height: none !important;
+                width: auto !important;
+                height: auto !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+            }
+
+            .fba1534088463
+            {
+                color: #1D1EEB !important;
+                background-color: #fff !important;
+                padding: 10px 50px 10px 10px !important;
+                border: 1px solid #2C2C2C !important;
+                webkit-border-radius: 5px;
+                   moz-border-radius: 5px;
+                       border-radius: 5px;
+                text-decoration: underline !important;
+                font-weight: bold !important;
+                display: block !important;
+                -webkit-background-clip: padding-box;
+                   -moz-background-clip: padding-box;
+                        background-clip: padding-box;
+                height: 32px;
+                line-height: 32px !important;
+                background-image: url(http://xtgem.com/images/arrow.gif) !important;
+                background-repeat: no-repeat !important;
+                background-position: 95% center !important;
+            }
+
+            .fbp1534088463
+            {
+                position: relative !important;
+                display: block !important;
+                width:320px !important;
+                height:50px !important;
+                text-align:left !important;
+                background-color: #fff !important;
+                -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+                -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+                padding: 3px !important;
+                border-radius: 3px !important;
+                border: 1px solid #6bc135 !important;
+                text-decoration: underline !important;
+            }
+
+            .fbp_txt1534088463
+            {
+                position:relative !important;
+                display: inline-block !important;
+                min-width: 200px;
+                max-width: 200px;
+                height:50px !important;
+                vertical-align: top !important;
+                line-height:50px !important;
+                margin-left: 6px !important;
+                text-align: left !important;
+                color: #0274d4 !important;
+                font-family: Helvetica, Arial, sans-serif !important;
+                font-size: 13px !important;
+                font-weight: bold !important;
+                text-decoration: underline !important;
+            }
+
+            .fbp_ico1534088463
+            {
+                position: absolute !important;
+                right: 10px !important;
+                height: 50px !important;
+                line-height: 46px !important;
+                vertical-align: top !important;
+                color: #6bc135 !important;
+            }
+
+            #st1534088463 .rolling_ad { display: none !important; }
+            #st1534088463 .rolling_ad.roll_on { display: inline-block !important; }
+        </style></div><!----><noscript></noscript><script type="text/javascript"></script><textarea style="display:none;"></textarea><style></style><iframe style="display:none;width:0px;height:0px;border:0"></iframe><noframes></noframes><script type="text/javascript" id="xtjs">                (function (){
+
+                    var d, b, ad_pos = false, el_rolling_ads, html, el, el_inner, el_new = '', i = 0;
+
+                    function xt_cache () {
+                        d = document;
+                        b = d.getElementsByTagName('body')[0];
+                        html = d.documentElement;
+                        el = d.getElementById( 'st1534088463' );
+                        el_inner = d.getElementById( 'a1534088463' );
+                        el_rolling_ads = el.getElementsByClassName( 'rolling_ad' );
+                    }
+
+                    xt_cache();
+
+                        if ( el.children[ 0 ] !== el_inner && el.children[ 0 ].tagName == "A" ) {
+
+                            for ( i = 1; i < el.children.length; i++ ) {
+                                el_new += el.children[i].outerHTML;
+                            }
+
+                            el.innerHTML = el_inner.outerHTML.split( '>' )[ 0 ] + '>' + el_new + '</span>';
+
+                            xt_cache();
+                        }
+                        else if ( el.offsetParent === null ) {
+                            b.insertBefore( el, b.firstChild );
+
+                            xt_cache();
+                            ad_pos = true;
+                        }
+
+                        if (d.getElementById('kosmos-banner')) {
+                            ad_pos = true;
+                        }
+
+                        el.style.display="block";
+                        el.style.textAlign="center";
+                        el.style.position="fixed";
+                        if ( ad_pos ) { el.style.top=10+"px"; el.style.bottom='auto'; } else { el.style.bottom=10+"px"; }
+                        el.style.left="0";
+                        el.style.right="0";
+                        el.style.height="1px";
+
+                        var el_imgs = el.getElementsByTagName( 'IMG' );
+                        for (i=0,len=el_imgs.length; i<len; i++) { el_imgs[i].onload = fix_height; }
+
+                        function fix_height () {
+                            el.style.marginBottom = el_inner.offsetHeight+"px";
+                            if ( ad_pos ) {
+                                html.style.paddingTop = el_inner.offsetHeight+9+"px";
+                            } else {
+                                html.style.paddingBottom = el_inner.offsetHeight+9+"px";
+                            }
+                        }
+
+                        setTimeout(function(){fix_height();},200);
+
+                        var closebutton = d.createElement('IMG');
+                            closebutton.src = 'http://xtgem.com/images/close2.png?v=0.01';
+                            closebutton.alt = '[x]';
+                            closebutton.setAttribute( 'class', '_xt_ad_close' );
+                            closebutton.onclick = function () { closebutton.setAttribute( 'style', 'display: none !important' ); el.style.position = 'static';  closebutton.onclick = null; html.style.paddingBottom = '0'; html.style.paddingTop = '0'; if ( d.getElementById('wr1534088463') ) { d.getElementById('wr1534088463').style.bottom = '0'; } };
+                            el_inner.appendChild(closebutton);
+
+                        // lets roll ads if needed
+                        if ( el_rolling_ads )
+                        {
+                            function roll_ads () {
+                                var i = 0,
+                                    len = el_rolling_ads.length,
+                                    curr_ad,
+                                    next_ad,
+                                    first_ad = el_rolling_ads[ 0 ];
+
+                                for ( ; i < len; i++) {
+                                    curr_ad = el_rolling_ads[ i ];
+                                    next_ad = el_rolling_ads[ i + 1 ] ? el_rolling_ads[ i + 1 ] : first_ad;
+
+                                    if ( curr_ad.className.indexOf( ' roll_on' ) !== -1 ) {
+                                        curr_ad.className = curr_ad.className.replace(' roll_on', '');
+                                        next_ad.className = next_ad.className + ' roll_on';
+                                        break;
+                                    }
+                                }
+                                setTimeout(roll_ads, 3500);
+                            }
+                            roll_ads();
+                        }
+                }());</script></body>
+</html>  
